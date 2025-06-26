@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Music Composer | Fabio Silva</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <a href="../../index.html" class="futuristic-title">F.SILVA</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#interests">Interests</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title">AI Music Composer</h1>
+            <p class="project-subtitle">Artificial Intelligence meets Musical Creativity</p>
+            <div class="project-tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">MIDI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <h2>Project Overview</h2>
+                    <p>The AI Music Composer is a neural network-based system that generates original musical compositions across various genres. Using deep learning techniques and trained on thousands of classical and contemporary pieces, this AI creates melodies, harmonies, and rhythms that blend mathematical precision with artistic expression.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Multi-genre composition generation</li>
+                        <li>Real-time MIDI output</li>
+                        <li>Customizable style parameters</li>
+                        <li>Interactive web interface</li>
+                        <li>Audio visualization</li>
+                    </ul>
+                </div>
+                <div class="overview-demo">
+                    <div class="demo-container">
+                        <h3>Generate Music</h3>
+                        <div class="controls">
+                            <label for="genre">Genre:</label>
+                            <select id="genre">
+                                <option value="classical">Classical</option>
+                                <option value="jazz">Jazz</option>
+                                <option value="electronic">Electronic</option>
+                                <option value="ambient">Ambient</option>
+                            </select>
+                            
+                            <label for="tempo">Tempo:</label>
+                            <input type="range" id="tempo" min="60" max="180" value="120">
+                            <span id="tempo-value">120 BPM</span>
+                            
+                            <label for="complexity">Complexity:</label>
+                            <input type="range" id="complexity" min="1" max="5" value="3">
+                            <span id="complexity-value">3</span>
+                        </div>
+                        
+                        <button id="generate-btn" class="generate-btn">Generate Composition</button>
+                        
+                        <div class="audio-player" id="audio-player" style="display: none;">
+                            <canvas id="waveform" width="400" height="100"></canvas>
+                            <div class="player-controls">
+                                <button id="play-btn">▶️</button>
+                                <button id="pause-btn">⏸️</button>
+                                <button id="stop-btn">⏹️</button>
+                                <button id="download-btn">💾</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="technical-details">
+        <div class="container">
+            <h2>Technical Implementation</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Neural Architecture</h3>
+                    <p>LSTM-based recurrent neural network with attention mechanisms for sequence-to-sequence music generation.</p>
+                    <div class="code-snippet">
+                        <pre><code>model = Sequential([
+    LSTM(512, return_sequences=True),
+    Dropout(0.3),
+    LSTM(512, return_sequences=True),
+    Dropout(0.3),
+    Dense(256, activation='relu'),
+    Dense(vocab_size, activation='softmax')
+])</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Data Processing</h3>
+                    <p>MIDI files are converted to numerical sequences representing notes, durations, and velocities.</p>
+                    <div class="code-snippet">
+                        <pre><code>def midi_to_sequence(midi_file):
+    notes = []
+    for msg in midi_file:
+        if msg.type == 'note_on':
+            notes.append([msg.note, msg.velocity, msg.time])
+    return np.array(notes)</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>Generation Process</h3>
+                    <p>Temperature-controlled sampling ensures musical coherence while maintaining creativity.</p>
+                    <div class="code-snippet">
+                        <pre><code>def generate_sequence(model, seed, length, temperature=1.0):
+    sequence = seed
+    for _ in range(length):
+        prediction = model.predict(sequence)
+        prediction = adjust_temperature(prediction, temperature)
+        next_note = sample_from_distribution(prediction)
+        sequence = np.append(sequence, next_note)
+    return sequence</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <h2>Generated Compositions</h2>
+            <div class="compositions-grid">
+                <div class="composition-card">
+                    <h3>Classical Sonata in D Minor</h3>
+                    <p>AI-generated piece in the style of classical composers</p>
+                    <div class="composition-controls">
+                        <button class="play-composition" data-track="classical">▶️ Play</button>
+                        <span class="duration">3:42</span>
+                    </div>
+                </div>
+                
+                <div class="composition-card">
+                    <h3>Electronic Ambient Journey</h3>
+                    <p>Atmospheric electronic composition with evolving textures</p>
+                    <div class="composition-controls">
+                        <button class="play-composition" data-track="electronic">▶️ Play</button>
+                        <span class="duration">5:18</span>
+                    </div>
+                </div>
+                
+                <div class="composition-card">
+                    <h3>Jazz Improvisation</h3>
+                    <p>Bebop-style jazz composition with complex harmonies</p>
+                    <div class="composition-controls">
+                        <button class="play-composition" data-track="jazz">▶️ Play</button>
+                        <span class="duration">4:15</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fabio Silva. AI Music Composer Project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

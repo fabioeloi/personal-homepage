@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychedelic Sound Installation | Fabio Silva</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <a href="../../index.html" class="futuristic-title">F.SILVA</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#interests">Interests</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title">Psychedelic Sound Installation</h1>
+            <p class="project-subtitle">Journey Through Sonic Dimensions</p>
+            <div class="project-tags">
+                <span class="tag">Web Audio API</span>
+                <span class="tag">Spatial Audio</span>
+                <span class="tag">Interactive Art</span>
+                <span class="tag">Generative Music</span>
+            </div>
+        </div>
+        <div class="cosmic-background"></div>
+    </section>
+
+    <!-- Interactive Installation -->
+    <section class="installation-section">
+        <div class="container">
+            <div class="installation-info">
+                <h2>Enter the Sonic Universe</h2>
+                <p>Move your cursor to explore different dimensions of sound. Each area generates unique sonic textures inspired by the revolutionary spirit of 1960s psychedelic music.</p>
+                <div class="instructions">
+                    <div class="instruction">
+                        <span class="icon">🎭</span>
+                        <span>Move mouse for spatial audio effects</span>
+                    </div>
+                    <div class="instruction">
+                        <span class="icon">🌈</span>
+                        <span>Click to trigger sound events</span>
+                    </div>
+                    <div class="instruction">
+                        <span class="icon">🔊</span>
+                        <span>Use controls to shape the experience</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="installation-canvas-container">
+                <canvas id="psychedelicCanvas" width="1200" height="800"></canvas>
+                <div class="sound-zones" id="soundZones">
+                    <!-- Dynamic sound zones will be generated here -->
+                </div>
+                <div class="visual-effects" id="visualEffects">
+                    <!-- Visual effects overlay -->
+                </div>
+            </div>
+            
+            <div class="installation-controls">
+                <div class="control-group">
+                    <label>Master Volume</label>
+                    <input type="range" id="masterVolume" min="0" max="100" value="50">
+                    <span id="volumeValue">50%</span>
+                </div>
+                
+                <div class="control-group">
+                    <label>Reverb</label>
+                    <input type="range" id="reverbLevel" min="0" max="100" value="30">
+                    <span id="reverbValue">30%</span>
+                </div>
+                
+                <div class="control-group">
+                    <label>Distortion</label>
+                    <input type="range" id="distortionLevel" min="0" max="100" value="20">
+                    <span id="distortionValue">20%</span>
+                </div>
+                
+                <div class="control-group">
+                    <label>Psychedelic Mode</label>
+                    <select id="psychedelicMode">
+                        <option value="classic">Classic 60s</option>
+                        <option value="cosmic">Cosmic Journey</option>
+                        <option value="acid">Acid Trip</option>
+                        <option value="ambient">Ambient Space</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <button id="startInstallation" class="cosmic-btn">Start Experience</button>
+                    <button id="pauseInstallation" class="cosmic-btn" disabled>Pause</button>
+                    <button id="resetInstallation" class="cosmic-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sound Palette -->
+    <section class="palette-section">
+        <div class="container">
+            <h2>Sonic Palette</h2>
+            <div class="sound-categories">
+                <div class="category-card" data-category="leads">
+                    <div class="category-visual">
+                        <canvas class="category-canvas" width="200" height="150"></canvas>
+                    </div>
+                    <h3>Psychedelic Leads</h3>
+                    <p>Wailing guitars with heavy distortion and feedback, reminiscent of Hendrix's revolutionary sound</p>
+                    <button class="preview-btn" data-sound="leads">Preview</button>
+                </div>
+                
+                <div class="category-card" data-category="pads">
+                    <div class="category-visual">
+                        <canvas class="category-canvas" width="200" height="150"></canvas>
+                    </div>
+                    <h3>Cosmic Pads</h3>
+                    <p>Ethereal synthesizer washes that create atmospheric depth and spatial immersion</p>
+                    <button class="preview-btn" data-sound="pads">Preview</button>
+                </div>
+                
+                <div class="category-card" data-category="rhythms">
+                    <div class="category-visual">
+                        <canvas class="category-canvas" width="200" height="150"></canvas>
+                    </div>
+                    <h3>Hypnotic Rhythms</h3>
+                    <p>Complex polyrhythmic patterns that shift and evolve, inducing trance-like states</p>
+                    <button class="preview-btn" data-sound="rhythms">Preview</button>
+                </div>
+                
+                <div class="category-card" data-category="effects">
+                    <div class="category-visual">
+                        <canvas class="category-canvas" width="200" height="150"></canvas>
+                    </div>
+                    <h3>Mind-Bending Effects</h3>
+                    <p>Delays, flangers, and phase shifters create the signature psychedelic sound landscape</p>
+                    <button class="preview-btn" data-sound="effects">Preview</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Theory -->
+    <section class="theory-section">
+        <div class="container">
+            <h2>The Science of Psychedelic Sound</h2>
+            <div class="theory-content">
+                <div class="theory-text">
+                    <h3>Spatial Audio & Consciousness</h3>
+                    <p>This installation explores how spatial audio processing can alter perception and consciousness. By manipulating phase relationships, frequency content, and temporal delays, we create immersive soundscapes that mirror the perceptual shifts associated with psychedelic experiences.</p>
+                    
+                    <h3>Hendrix-Inspired Techniques</h3>
+                    <p>Drawing from Jimi Hendrix's pioneering use of feedback, distortion, and studio effects, this digital installation recreates and extends those revolutionary techniques through algorithmic composition and real-time audio processing.</p>
+                    
+                    <h3>Interactive Generative Music</h3>
+                    <p>Each interaction triggers algorithmic composition processes that generate unique musical phrases, ensuring no two experiences are identical while maintaining coherent musical structures.</p>
+                </div>
+                
+                <div class="theory-visualization">
+                    <canvas id="waveformCanvas" width="400" height="300"></canvas>
+                    <div class="visualization-controls">
+                        <button id="visualizeLeads">Guitar Distortion</button>
+                        <button id="visualizePads">Reverb Tails</button>
+                        <button id="visualizeRhythms">Polyrhythms</button>
+                        <button id="visualizeEffects">Phase Shifts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Installation Documentation</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <canvas class="gallery-canvas" width="300" height="200"></canvas>
+                    <div class="gallery-info">
+                        <h3>Live Performance Mode</h3>
+                        <p>Interactive installation responding to live musicians</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <canvas class="gallery-canvas" width="300" height="200"></canvas>
+                    <div class="gallery-info">
+                        <h3>Museum Exhibition</h3>
+                        <p>Immersive room-scale audio-visual experience</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <canvas class="gallery-canvas" width="300" height="200"></canvas>
+                    <div class="gallery-info">
+                        <h3>VR Integration</h3>
+                        <p>Virtual reality extension for complete sensory immersion</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <canvas class="gallery-canvas" width="300" height="200"></canvas>
+                    <div class="gallery-info">
+                        <h3>Collaborative Session</h3>
+                        <p>Multiple users creating collective sonic landscapes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Context Warning -->
+    <div class="audio-warning" id="audioWarning">
+        <div class="warning-content">
+            <h3>Audio Experience Ready</h3>
+            <p>This installation requires audio permission to create immersive sound experiences.</p>
+            <button id="enableAudio" class="cosmic-btn">Enable Audio</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fabio Silva. Psychedelic Sound Installation.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surreal Photography Series | Fabio Silva</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <a href="../../index.html" class="futuristic-title">F.SILVA</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#interests">Interests</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title">Surreal Photography Series</h1>
+            <p class="project-subtitle">Where Reality Melts into Dreams</p>
+            <div class="project-tags">
+                <span class="tag">Digital Photography</span>
+                <span class="tag">Surrealism</span>
+                <span class="tag">Photo Manipulation</span>
+                <span class="tag">Fine Art</span>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-controls">
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Works</button>
+                    <button class="filter-btn" data-filter="dreams">Dreamscapes</button>
+                    <button class="filter-btn" data-filter="time">Time Distortion</button>
+                    <button class="filter-btn" data-filter="identity">Identity</button>
+                    <button class="filter-btn" data-filter="nature">Nature Surreal</button>
+                </div>
+                
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">⊞ Grid</button>
+                    <button class="view-btn" data-view="masonry">⊟ Masonry</button>
+                    <button class="view-btn" data-view="fullscreen">⊡ Slideshow</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="gallery">
+                <!-- Photos will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Philosophy -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2>The Art of Impossible Realities</h2>
+                <div class="philosophy-grid">
+                    <div class="philosophy-text">
+                        <p class="lead-text">Inspired by Salvador Dalí's exploration of the unconscious mind, this photography series ventures beyond the boundaries of conventional reality. Each image is a window into alternative dimensions where time bends, gravity fails, and dreams materialize.</p>
+                        
+                        <p>Using a combination of traditional photography and digital manipulation techniques, I create impossible scenes that challenge perception and invite viewers to question the nature of reality itself. The precision of Ansel Adams meets the surreal imagination of Dalí in every frame.</p>
+                        
+                        <blockquote>
+                            "Photography is not about capturing what exists, but about revealing what could exist in the realm of dreams and impossibilities."
+                        </blockquote>
+                    </div>
+                    
+                    <div class="techniques-panel">
+                        <h3>Technical Approach</h3>
+                        <div class="technique-item">
+                            <div class="technique-icon">📷</div>
+                            <div class="technique-info">
+                                <h4>High-Contrast Capture</h4>
+                                <p>Following Adams' Zone System for maximum tonal range and detail</p>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-item">
+                            <div class="technique-icon">🎨</div>
+                            <div class="technique-info">
+                                <h4>Digital Surrealism</h4>
+                                <p>Advanced compositing and reality-bending transformations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-item">
+                            <div class="technique-icon">⏰</div>
+                            <div class="technique-info">
+                                <h4>Temporal Layering</h4>
+                                <p>Multiple exposures combined to show time as fluid</p>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-item">
+                            <div class="technique-icon">🔮</div>
+                            <div class="technique-info">
+                                <h4>Dream Logic</h4>
+                                <p>Applying unconscious narrative structures to visual composition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Series -->
+    <section class="featured-series">
+        <div class="container">
+            <h2>Featured Series</h2>
+            <div class="series-grid">
+                <div class="series-card dreams">
+                    <div class="series-preview">
+                        <canvas class="series-canvas" width="400" height="300"></canvas>
+                    </div>
+                    <div class="series-info">
+                        <h3>Melting Cityscapes</h3>
+                        <p>Urban environments dissolve into liquid dreams, where skyscrapers bend like Dalí's clocks and streets flow like rivers of time.</p>
+                        <div class="series-stats">
+                            <span>12 Images</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="series-card time">
+                    <div class="series-preview">
+                        <canvas class="series-canvas" width="400" height="300"></canvas>
+                    </div>
+                    <div class="series-info">
+                        <h3>Fractured Portraits</h3>
+                        <p>Human faces become geometric puzzles, exploring the multiplicity of identity through impossible reflections and recursive imagery.</p>
+                        <div class="series-stats">
+                            <span>8 Images</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="series-card nature">
+                    <div class="series-preview">
+                        <canvas class="series-canvas" width="400" height="300"></canvas>
+                    </div>
+                    <div class="series-info">
+                        <h3>Floating Landscapes</h3>
+                        <p>Natural elements defy gravity, creating impossible ecosystems where trees grow downward and waterfalls flow upward into clouded skies.</p>
+                        <div class="series-stats">
+                            <span>15 Images</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Photo Viewer -->
+    <div class="photo-modal" id="photoModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-image-container">
+                <img class="modal-image" id="modalImage" src="" alt="">
+                <div class="modal-nav">
+                    <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                    <button class="nav-btn next-btn" id="nextBtn">›</button>
+                </div>
+            </div>
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <div class="modal-details">
+                    <span id="modalTechnique"></span>
+                    <span id="modalYear"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fabio Silva. Surreal Photography Series.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

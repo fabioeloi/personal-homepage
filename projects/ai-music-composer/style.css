@@ -1,0 +1,361 @@
+/* AI Music Composer Project Styles */
+
+.project-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    text-align: center;
+}
+
+.project-title {
+    font-family: var(--font-futuristic);
+    font-size: 3.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px var(--accent-blue);
+}
+
+.project-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.project-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-overview {
+    padding: 80px 0;
+    background: var(--primary-dark);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.overview-text h2 {
+    font-family: var(--font-futuristic);
+    color: var(--accent-blue);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.overview-text h3 {
+    font-family: var(--font-futuristic);
+    color: var(--psychedelic-pink);
+    margin: 2rem 0 1rem;
+}
+
+.overview-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.overview-text li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.overview-text li::before {
+    content: '♪';
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+}
+
+.demo-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.demo-container h3 {
+    font-family: var(--font-futuristic);
+    color: var(--accent-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.controls label {
+    font-family: var(--font-futuristic);
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.controls select,
+.controls input[type="range"] {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent-blue);
+    border-radius: 5px;
+    color: var(--primary-light);
+    font-family: var(--font-futuristic);
+}
+
+.controls select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%2300d4ff' viewBox='0 0 16 16'%3e%3cpath d='m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+.controls input[type="range"] {
+    height: 6px;
+    background: linear-gradient(to right, var(--accent-blue), var(--psychedelic-pink));
+    outline: none;
+    border-radius: 3px;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+.controls span {
+    color: var(--psychedelic-pink);
+    font-family: var(--font-futuristic);
+    font-weight: bold;
+}
+
+.generate-btn {
+    background: linear-gradient(45deg, var(--accent-blue), var(--psychedelic-pink));
+    border: none;
+    color: var(--primary-dark);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-family: var(--font-futuristic);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+.audio-player {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#waveform {
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.player-controls button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.player-controls button:hover {
+    background: var(--accent-blue);
+    color: var(--primary-dark);
+    box-shadow: 0 0 15px var(--accent-blue);
+}
+
+.technical-details {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.technical-details h2 {
+    font-family: var(--font-futuristic);
+    color: var(--accent-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+.tech-card h3 {
+    font-family: var(--font-futuristic);
+    color: var(--psychedelic-pink);
+    margin-bottom: 1rem;
+}
+
+.code-snippet {
+    background: var(--primary-dark);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.code-snippet pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-blue);
+}
+
+.code-snippet code {
+    color: var(--primary-light);
+}
+
+.results-section {
+    padding: 80px 0;
+    background: var(--primary-dark);
+}
+
+.results-section h2 {
+    font-family: var(--font-futuristic);
+    color: var(--accent-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.compositions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.composition-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.composition-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+}
+
+.composition-card h3 {
+    font-family: var(--font-futuristic);
+    color: var(--psychedelic-pink);
+    margin-bottom: 1rem;
+}
+
+.composition-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.play-composition {
+    background: linear-gradient(45deg, var(--psychedelic-pink), var(--accent-blue));
+    border: none;
+    color: var(--primary-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-family: var(--font-futuristic);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-composition:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 0, 110, 0.3);
+}
+
+.duration {
+    font-family: var(--font-futuristic);
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.5rem;
+    }
+    
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .compositions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-tags {
+        justify-content: center;
+    }
+}
+
+/* Animation for generating music */
+@keyframes generating {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.generating {
+    animation: generating 1s infinite;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Visualizer | Fabio Silva</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <a href="../../index.html" class="futuristic-title">F.SILVA</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#interests">Interests</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title">Neural Network Visualizer</h1>
+            <p class="project-subtitle">Watch AI Learn in Real-Time</p>
+            <div class="project-tags">
+                <span class="tag">TensorFlow.js</span>
+                <span class="tag">Canvas API</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Data Visualization</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-controls">
+                <div class="control-panel">
+                    <h3>Network Architecture</h3>
+                    <div class="architecture-controls">
+                        <label>Input Nodes:</label>
+                        <input type="range" id="inputNodes" min="2" max="10" value="4">
+                        <span id="inputValue">4</span>
+                        
+                        <label>Hidden Layers:</label>
+                        <input type="range" id="hiddenLayers" min="1" max="5" value="2">
+                        <span id="layersValue">2</span>
+                        
+                        <label>Nodes per Layer:</label>
+                        <input type="range" id="hiddenNodes" min="3" max="12" value="6">
+                        <span id="nodesValue">6</span>
+                        
+                        <label>Output Nodes:</label>
+                        <input type="range" id="outputNodes" min="1" max="5" value="2">
+                        <span id="outputValue">2</span>
+                    </div>
+                </div>
+                
+                <div class="control-panel">
+                    <h3>Training Parameters</h3>
+                    <div class="training-controls">
+                        <label>Learning Rate:</label>
+                        <select id="learningRate">
+                            <option value="0.01">0.01</option>
+                            <option value="0.1" selected>0.1</option>
+                            <option value="0.3">0.3</option>
+                            <option value="0.5">0.5</option>
+                        </select>
+                        
+                        <label>Dataset:</label>
+                        <select id="dataset">
+                            <option value="spiral">Spiral</option>
+                            <option value="circle">Circle</option>
+                            <option value="xor">XOR</option>
+                            <option value="linear">Linear</option>
+                        </select>
+                        
+                        <label>Activation Function:</label>
+                        <select id="activation">
+                            <option value="relu" selected>ReLU</option>
+                            <option value="sigmoid">Sigmoid</option>
+                            <option value="tanh">Tanh</option>
+                        </select>
+                        
+                        <label>Batch Size:</label>
+                        <input type="range" id="batchSize" min="1" max="50" value="10">
+                        <span id="batchValue">10</span>
+                    </div>
+                </div>
+                
+                <div class="control-panel">
+                    <h3>Visualization</h3>
+                    <div class="viz-controls">
+                        <button id="buildNetwork" class="primary-btn">Build Network</button>
+                        <button id="trainNetwork" class="secondary-btn">Start Training</button>
+                        <button id="pauseTraining" class="secondary-btn" disabled>Pause</button>
+                        <button id="resetNetwork" class="danger-btn">Reset</button>
+                        
+                        <div class="speed-control">
+                            <label>Animation Speed:</label>
+                            <input type="range" id="animSpeed" min="1" max="10" value="5">
+                            <span id="speedValue">5x</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visualization-area">
+                <div class="network-container">
+                    <canvas id="networkCanvas" width="800" height="500"></canvas>
+                    <div class="network-info">
+                        <div class="info-item">
+                            <label>Epoch:</label>
+                            <span id="epochCount">0</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Loss:</label>
+                            <span id="lossValue">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Accuracy:</label>
+                            <span id="accuracyValue">--</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="data-container">
+                    <canvas id="dataCanvas" width="400" height="400"></canvas>
+                    <div class="data-info">
+                        <h4>Training Data</h4>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="color-box class-0"></div>
+                                <span>Class 0</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="color-box class-1"></div>
+                                <span>Class 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="metrics-dashboard">
+                <div class="chart-container">
+                    <canvas id="lossChart" width="400" height="200"></canvas>
+                    <h4>Loss Over Time</h4>
+                </div>
+                <div class="chart-container">
+                    <canvas id="accuracyChart" width="400" height="200"></canvas>
+                    <h4>Accuracy Over Time</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <h2>Understanding Neural Networks</h2>
+            <div class="education-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">🧠</div>
+                    <h3>Neurons & Layers</h3>
+                    <p>Neural networks consist of interconnected nodes (neurons) organized in layers. Each connection has a weight that determines its influence on the next layer.</p>
+                    <div class="concept-details">
+                        <strong>Watch for:</strong> How activations flow through the network as bright pulses
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">⚡</div>
+                    <h3>Forward Propagation</h3>
+                    <p>Input data flows forward through the network, with each layer transforming the data using weights, biases, and activation functions.</p>
+                    <div class="concept-details">
+                        <strong>Watch for:</strong> Blue pulses moving left to right during prediction
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">🔄</div>
+                    <h3>Backpropagation</h3>
+                    <p>Errors flow backward through the network, adjusting weights to minimize the difference between predicted and actual outputs.</p>
+                    <div class="concept-details">
+                        <strong>Watch for:</strong> Red pulses moving right to left during training
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">📊</div>
+                    <h3>Loss & Optimization</h3>
+                    <p>The loss function measures prediction accuracy. The optimizer adjusts weights to minimize loss and improve performance over time.</p>
+                    <div class="concept-details">
+                        <strong>Watch for:</strong> Decreasing loss values and changing connection colors
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Examples -->
+    <section class="examples-section">
+        <div class="container">
+            <h2>Common Architectures</h2>
+            <div class="architecture-examples">
+                <div class="arch-example">
+                    <canvas class="arch-canvas" width="300" height="200"></canvas>
+                    <h3>Feedforward Network</h3>
+                    <p>Basic architecture for classification and regression tasks</p>
+                    <button class="load-example" data-arch="feedforward">Load Example</button>
+                </div>
+                
+                <div class="arch-example">
+                    <canvas class="arch-canvas" width="300" height="200"></canvas>
+                    <h3>Deep Network</h3>
+                    <p>Multiple hidden layers for complex pattern recognition</p>
+                    <button class="load-example" data-arch="deep">Load Example</button>
+                </div>
+                
+                <div class="arch-example">
+                    <canvas class="arch-canvas" width="300" height="200"></canvas>
+                    <h3>Wide Network</h3>
+                    <p>Fewer layers with more neurons per layer</p>
+                    <button class="load-example" data-arch="wide">Load Example</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fabio Silva. Neural Network Visualizer.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Music Analysis | Fabio Silva</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <a href="../../index.html" class="futuristic-title">F.SILVA</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#interests">Interests</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title">Statistical Music Analysis</h1>
+            <p class="project-subtitle">Unveiling the Patterns in Music</p>
+            <div class="project-tags">
+                <span class="tag">R Programming</span>
+                <span class="tag">Data Science</span>
+                <span class="tag">Music Theory</span>
+                <span class="tag">D3.js</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Overview -->
+    <section class="analysis-overview">
+        <div class="container">
+            <div class="overview-content">
+                <h2>The Mathematics of Melody</h2>
+                <p>The Statistical Music Analysis project explores the mathematical foundations of music, revealing underlying patterns and structures that govern musical compositions. From harmonic progressions to rhythmic patterns, this project employs statistical methods to decode the language of music.</p>
+
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3>Rhythmic Complexity</h3>
+                        <p>Analyzing rhythms across genres to identify complex polyrhythmic structures and syncopation.</p>
+                        <canvas class="insight-chart" width="300" height="200"></canvas>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Harmonic Richness</h3>
+                        <p>Visualizing harmonic spectrums and modal interchange in contemporary compositions.</p>
+                        <canvas class="insight-chart" width="300" height="200"></canvas>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Melodic Patterns</h3>
+                        <p>Decoding recurring melodic motifs and their variations within and across pieces.</p>
+                        <canvas class="insight-chart" width="300" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Visualizations -->
+    <section class="interactive-visualizations">
+        <div class="container">
+            <h2>Explore Interactive Visualizations</h2>
+            <p>Dive into interactive charts and graphs that bring musical data to life. Use the controls to manipulate parameters and observe how they affect the visualized patterns.</p>
+            <div class="visualization-controls">
+                <div class="control-group">
+                    <label>Dimension:</label>
+                    <select id="dimensionSelect">
+                        <option value="2d">2D</option>
+                        <option value="3d">3D</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Time Scale:</label>
+                    <input type="range" id="timeScale" min="1" max="10" value="5">
+                    <span id="timeScaleValue">5</span>
+                </div>
+                <div class="control-group">
+                    <label>Chord Complexity:</label>
+                    <input type="range" id="chordComplexity" min="1" max="7" value="3">
+                    <span id="chordComplexityValue">3</span>
+                </div>
+                <button id="updateVisualization" class="visualization-btn">Update</button>
+            </div>
+            <div id="visualizationCanvas"></div>
+        </div>
+    </section>
+
+    <!-- Data Storytelling -->
+    <section class="data-storytelling">
+        <div class="container">
+            <h2>Data-Driven Narratives</h2>
+            <p>Music is more than just sound; it's a narrative told through data. Explore stories crafted from musical statistics, offering new perspectives on familiar compositions.</p>
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3>Symphony in Numbers</h3>
+                    <p>A data-driven analysis of Beethoven's symphonies, revealing the mathematical genius behind the masterpieces.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Jazz Through Data</h3>
+                    <p>Investigating the improvisational structure of jazz and its statistical representation in modern datasets.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Electronic Patterns</h3>
+                    <p>Uncovering the repetitive patterns that define electronic dance music's rhythmic structure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fabio Silva. Statistical Music Analysis Project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

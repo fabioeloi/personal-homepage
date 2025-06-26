@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Symphony | Fabio Silva</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <a href="../../index.html" class="futuristic-title">F.SILVA</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#interests">Interests</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title">Data Visualization Symphony</h1>
+            <p class="project-subtitle">Where Data Becomes Music, Statistics Become Art</p>
+            <div class="project-tags">
+                <span class="tag">D3.js</span>
+                <span class="tag">Statistics</span>
+                <span class="tag">Web Audio API</span>
+                <span class="tag">Interactive Design</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="interactive-demo">
+        <div class="container">
+            <h2>Experience Data as Music</h2>
+            <div class="demo-controls">
+                <div class="control-group">
+                    <label for="dataset">Dataset:</label>
+                    <select id="dataset">
+                        <option value="stock_market">Stock Market Trends</option>
+                        <option value="climate_data">Climate Data</option>
+                        <option value="population">Population Growth</option>
+                        <option value="music_streaming">Music Streaming Stats</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="musical_scale">Musical Scale:</label>
+                    <select id="musical_scale">
+                        <option value="major">C Major</option>
+                        <option value="minor">C Minor</option>
+                        <option value="pentatonic">Pentatonic</option>
+                        <option value="chromatic">Chromatic</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="tempo_mapping">Tempo Mapping:</label>
+                    <select id="tempo_mapping">
+                        <option value="variance">Data Variance</option>
+                        <option value="trend">Trend Strength</option>
+                        <option value="volatility">Volatility</option>
+                    </select>
+                </div>
+                
+                <button id="play_symphony" class="symphony-btn">🎵 Play Data Symphony</button>
+            </div>
+            
+            <div class="visualization-container">
+                <div class="chart-area">
+                    <svg id="main_chart" width="800" height="400"></svg>
+                    <div class="chart-info">
+                        <div class="data-point-info">
+                            <span class="current-note">Note: --</span>
+                            <span class="current-value">Value: --</span>
+                            <span class="current-frequency">Frequency: -- Hz</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-visualization">
+                    <canvas id="audio_canvas" width="800" height="200"></canvas>
+                    <div class="audio-controls">
+                        <button id="play_btn">▶️</button>
+                        <button id="pause_btn">⏸️</button>
+                        <button id="stop_btn">⏹️</button>
+                        <div class="volume-control">
+                            <label>Volume:</label>
+                            <input type="range" id="volume" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+        <div class="container">
+            <div class="overview-content">
+                <h2>Transforming Data into Symphonic Experiences</h2>
+                <p>The Data Visualization Symphony project explores the intersection of statistical analysis and musical composition. By mapping numerical data to musical parameters, we create immersive auditory experiences that reveal patterns, trends, and relationships in complex datasets.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Statistical Mapping</h3>
+                        <p>Convert statistical measures like variance, correlation, and distribution into musical elements such as pitch, rhythm, and harmony.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎼</div>
+                        <h3>Musical Algorithms</h3>
+                        <p>Apply music theory principles to ensure generated compositions are pleasing while maintaining data integrity.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌊</div>
+                        <h3>Real-time Visualization</h3>
+                        <p>Watch data flow and transform in real-time as D3.js creates dynamic, responsive visualizations synchronized with audio.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎧</div>
+                        <h3>Immersive Audio</h3>
+                        <p>Experience data through Web Audio API with spatial audio effects, reverb, and dynamic frequency modulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section class="technical-section">
+        <div class="container">
+            <h2>Technical Architecture</h2>
+            <div class="tech-flow">
+                <div class="tech-step">
+                    <div class="step-number">1</div>
+                    <h3>Data Processing</h3>
+                    <p>Normalize and clean raw datasets</p>
+                    <div class="code-example">
+                        <pre><code>const processData = (rawData) => {
+  return rawData.map(d => ({
+    value: +d.value,
+    timestamp: new Date(d.date),
+    normalized: normalize(d.value, min, max)
+  }));
+};</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tech-step">
+                    <div class="step-number">2</div>
+                    <h3>Statistical Analysis</h3>
+                    <p>Extract musical parameters from data</p>
+                    <div class="code-example">
+                        <pre><code>const extractMusicalParams = (data) => {
+  const variance = d3.variance(data, d => d.value);
+  const trend = calculateTrend(data);
+  return {
+    pitch: mapToPitch(data.value),
+    tempo: mapToTempo(variance),
+    volume: mapToVolume(trend)
+  };
+};</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tech-step">
+                    <div class="step-number">3</div>
+                    <h3>Visual Mapping</h3>
+                    <p>Create synchronized visual elements</p>
+                    <div class="code-example">
+                        <pre><code>const updateVisualization = (data, params) => {
+  svg.selectAll('.data-point')
+    .data(data)
+    .transition()
+    .attr('cy', d => yScale(d.value))
+    .attr('fill', d => colorScale(params.pitch));
+};</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tech-step">
+                    <div class="step-number">4</div>
+                    <h3>Audio Synthesis</h3>
+                    <p>Generate musical output with Web Audio API</p>
+                    <div class="code-example">
+                        <pre><code>const playNote = (frequency, duration) => {
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+  
+  oscillator.frequency.value = frequency;
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+  
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime + duration);
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Gallery -->
+    <section class="examples-gallery">
+        <div class="container">
+            <h2>Symphony Examples</h2>
+            <div class="gallery-grid">
+                <div class="example-card">
+                    <div class="example-preview">
+                        <canvas class="mini-chart" width="300" height="150"></canvas>
+                    </div>
+                    <div class="example-info">
+                        <h3>Stock Market Volatility</h3>
+                        <p>High volatility creates dramatic pitch variations and accelerated tempos, mimicking the emotional intensity of market fluctuations.</p>
+                        <button class="play-example" data-example="stock">🎵 Listen</button>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview">
+                        <canvas class="mini-chart" width="300" height="150"></canvas>
+                    </div>
+                    <div class="example-info">
+                        <h3>Climate Temperature Trends</h3>
+                        <p>Seasonal patterns create natural musical phrases, while long-term warming trends introduce harmonic shifts.</p>
+                        <button class="play-example" data-example="climate">🎵 Listen</button>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview">
+                        <canvas class="mini-chart" width="300" height="150"></canvas>
+                    </div>
+                    <div class="example-info">
+                        <h3>Population Demographics</h3>
+                        <p>Growth patterns translate to ascending melodies, while demographic shifts create rich harmonic progressions.</p>
+                        <button class="play-example" data-example="population">🎵 Listen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fabio Silva. Data Visualization Symphony Project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
