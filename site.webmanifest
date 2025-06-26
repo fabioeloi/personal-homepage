@@ -1,0 +1,88 @@
+{
+  "name": "Fabio Silva - Polymath Portfolio",
+  "short_name": "F.Silva Portfolio",
+  "description": "Polymath portfolio showcasing AI, music production, photography, data science, and interactive art",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00d4ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["portfolio", "technology", "art", "music", "photography"],
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of Fabio Silva's portfolio"
+    },
+    {
+      "src": "/assets/images/screenshot-mobile.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Fabio Silva's portfolio"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI Music Composer",
+      "short_name": "AI Music",
+      "description": "Interactive AI music generation tool",
+      "url": "/projects/ai-music-composer/",
+      "icons": [{ "src": "/assets/images/ai-music-icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Data Visualization Symphony", 
+      "short_name": "Data Symphony",
+      "description": "Transform data into musical experiences",
+      "url": "/projects/data-viz-symphony/",
+      "icons": [{ "src": "/assets/images/data-viz-icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Surreal Photography",
+      "short_name": "Photography",
+      "description": "Dalí-inspired photography series",
+      "url": "/projects/surreal-photography/", 
+      "icons": [{ "src": "/assets/images/photo-icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Neural Network Visualizer",
+      "short_name": "Neural Viz",
+      "description": "Watch AI learn in real-time",
+      "url": "/projects/neural-network-visualizer/",
+      "icons": [{ "src": "/assets/images/neural-icon.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
